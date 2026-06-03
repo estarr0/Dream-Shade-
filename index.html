@@ -1,102 +1,225 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Dream Shade | Premium Color Studio</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,800;1,800&family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Dream Shade — Premium Paint Studio</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
-<body class="dark-mode">
+<body>
 
+<!-- ── NAVIGATION ── -->
 <nav>
-    <a class="logo" href="#">THE<span>DREAM</span>SHADE</a>
-    <ul class="nav-links">
-        <li><a href="#palettes">Collections</a></li>
-        <li><a href="#mixer">Studio Lab</a></li>
-        <li><a href="#about">About</a></li>
-        <li><button id="theme-toggle" class="toggle-btn">🌓 Toggle Mode</button></li>
-        <li class="profile-nav">E</li>
-    </ul>
+  <a class="logo" href="#">Your<span>Dream</span>Shade</a>
+  <ul class="nav-links">
+    <li><a href="#palettes">Palettes</a></li>
+    <li><a href="#mixer">Mixer</a></li>
+    <li><a href="#gallery-section">Gallery</a></li>
+    <li><a href="#shop">Shop</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
 </nav>
 
-<header class="hero">
-    <div class="hero-left">
-        <p class="hero-tag">Digital Prototyping for Paint & Textile</p>
-        <h1 class="hero-h1">Find your<br><em id="typing-text"></em></h1>
-        <p class="hero-sub">The 7-shade rule engine. Prototype your blends with vertical precision before you mix a single drop of paint.</p>
-        <div class="cta-row">
-            <a class="btn-primary" href="#palettes">Explore Palettes</a>
-            <a class="btn-ghost" href="#mixer">Open Mixer</a>
-        </div>
+<!-- ── HERO ── -->
+<div class="hero">
+  <div class="hero-left">
+    <p class="hero-tag">Premium paint studio</p>
+    <h1 class="hero-h1">Find your<br><em>perfect</em><br>colour.</h1>
+    <p class="hero-sub">Explore six primary palettes — each split into seven hand-crafted shades. Then mix your own custom hue.</p>
+    <div class="cta-row">
+      <a class="btn-primary" href="#palettes">Explore palettes</a>
+      <a class="btn-ghost"   href="#mixer">Open mixer</a>
     </div>
-    <div class="hero-right-vertical">
-        <div class="v-strip" style="background:#e63232;"><span>CRIMSON</span></div>
-        <div class="v-strip" style="background:#1a6fe6;"><span>AZURE</span></div>
-        <div class="v-strip" style="background:#7c3fe8;"><span>ROYAL</span></div>
-        <div class="v-strip" style="background:#2ea84a;"><span>FOREST</span></div>
+  </div>
+  <div class="hero-right">
+    <div style="display:flex;flex-direction:column;height:100%">
+      <div class="strip-block" style="background:#e63232;color:#7d1010">Red</div>
+      <div class="strip-block" style="background:#f5a623;color:#3a1f00">Yellow</div>
+      <div class="strip-block" style="background:#1a6fe6;color:#042c53">Blue</div>
+      <div class="strip-block" style="background:#2ea84a;color:#0a2e12">Green</div>
+      <div class="strip-block" style="background:#7c3fe8;color:#2a1060">Purple</div>
+      <div class="strip-block" style="background:#f47c20;color:#4a2400">Orange</div>
     </div>
-</header>
+  </div>
+</div>
 
-<section id="palettes" class="section">
-    <p class="section-title">Primary Collections</p>
-    <h2 class="section-heading">Ten Master Palettes</h2>
-    <div class="grid-container" id="color-grid"></div>
-</section>
+<!-- ── PALETTES ── -->
+<div id="palettes" class="section">
+  <p class="section-title">Primary palettes</p>
+  <h2 class="section-heading">Six colours. Seven shades each.</h2>
+  <p class="section-sub">Hover any shade to preview, click + to send it to the mixer.</p>
+  <div class="palette-tabs" id="palette-tabs"></div>
+  <div id="palette-views"></div>
+</div>
 
-<section id="shade-section" class="section shade-area" style="display:none;">
-    <div id="shade-output"></div>
-</section>
-
-<section id="mixer" class="section">
-    <p class="section-title">The Studio Lab</p>
-    <div class="mixer-layout">
-        <div class="mixer-left">
-            <div class="chips-area" id="chips-area">
-                <span class="empty-hint">Click '+' on any shade to begin the pour...</span>
-            </div>
-            <div class="mixer-history" id="mixer-history"></div>
-        </div>
-        
-        <div class="mixer-right">
-            <div class="preview-box" id="preview-box">
-                <div class="pour-stream" id="pour-stream"></div>
-                <div class="preview-hex" id="preview-hex">#0D0D0D</div>
-                <div class="preview-cname" id="preview-cname">STUDIO EMPTY</div>
-            </div>
-            <button class="btn-reset" onclick="resetMixer()">Reset Studio</button>
-        </div>
+<!-- ── MIXER ── -->
+<div id="mixer" class="section">
+  <p class="section-title">Colour mixer</p>
+  <h2 class="section-heading">Blend your own shade.</h2>
+  <p class="section-sub">Add shades from any palette. Watch them pour and blend in real time.</p>
+  <div class="mixer-layout">
+    <div class="mixer-left">
+      <div class="chips-area" id="chips-area">
+        <span class="empty-hint">No shades added yet — click + on any shade above</span>
+      </div>
+      <div class="mixer-added-list" id="mixer-added-list"></div>
     </div>
-</section>
-
-<section id="about" class="section">
-    <p class="section-title">Industrial Solutions</p>
-    <div class="solutions-grid">
-        <div class="sol-card">
-            <h3>Textiles & Fabric</h3>
-            <p>Calculate hex-to-dye ratios for sustainable production.</p>
-        </div>
-        <div class="sol-card">
-            <h3>Cosmetic Formulation</h3>
-            <p>Prototype inclusive palettes in a digital-first environment.</p>
-        </div>
-        <div class="sol-card">
-            <h3>Architectural Paint</h3>
-            <p>The 7-shade rule ensures consistency for luxury interiors.</p>
-        </div>
+    <div class="mixer-right">
+      <div class="preview-box" id="preview-box" style="background:#141414">
+        <div class="pour-stream" id="pour-stream"></div>
+        <div class="preview-hex"   id="preview-hex">—</div>
+        <div class="preview-cname" id="preview-cname">Add shades to mix</div>
+      </div>
+      <p class="suggestions-label">Try adding</p>
+      <div class="suggestions-row" id="suggestions-row"></div>
     </div>
-</section>
+  </div>
+</div>
 
-<section id="collab" class="section contact-section">
-    <div class="contact-card">
-        <h2>Open for Collaboration</h2>
-        <p>Connecting software with physical industries. Let's build something beautiful.</p>
-        <a href="mailto:hello@thedreamshade.com" class="email-link">hello@thedreamshade.com</a>
+<!-- ── GALLERY ── -->
+<div id="gallery-section" class="section">
+  <p class="section-title">Full gallery</p>
+  <h2 class="section-heading">All shades, at a glance.</h2>
+  <p class="section-sub">Click any swatch to add it straight to the mixer.</p>
+  <div class="gallery-filter" id="gallery-filter"></div>
+  <div class="gallery-grid"  id="gallery-grid"></div>
+</div>
+
+<!-- ── SHOP ── -->
+<div id="shop" class="section">
+  <p class="section-title">Shop</p>
+  <h2 class="section-heading">Ready to paint.</h2>
+  <p class="section-sub">Premium interior and exterior paints in our signature shades.</p>
+  <div class="shop-grid">
+    <div class="shop-card">
+      <div class="shop-swatch" style="background:#e63232"></div>
+      <div class="shop-body">
+        <div class="shop-name">Crimson Collection</div>
+        <div class="shop-desc">Bold reds from blush to oxblood. Perfect for accent walls and feature spaces.</div>
+        <div class="shop-price">From $38</div>
+        <button class="shop-btn">Add to cart</button>
+      </div>
     </div>
-</section>
+    <div class="shop-card">
+      <div class="shop-swatch" style="background:#f5a623"></div>
+      <div class="shop-body">
+        <div class="shop-name">Golden Hour</div>
+        <div class="shop-desc">Warm yellows and ambers that bring sunlight into any room.</div>
+        <div class="shop-price">From $38</div>
+        <button class="shop-btn">Add to cart</button>
+      </div>
+    </div>
+    <div class="shop-card">
+      <div class="shop-swatch" style="background:#1a6fe6"></div>
+      <div class="shop-body">
+        <div class="shop-name">Deep Blue</div>
+        <div class="shop-desc">From arctic ice to midnight navy — calming blues for every space.</div>
+        <div class="shop-price">From $38</div>
+        <button class="shop-btn">Add to cart</button>
+      </div>
+    </div>
+    <div class="shop-card">
+      <div class="shop-swatch" style="background:#2ea84a"></div>
+      <div class="shop-body">
+        <div class="shop-name">Garden &amp; Grove</div>
+        <div class="shop-desc">Nature-inspired greens that bring life to interiors and exteriors.</div>
+        <div class="shop-price">From $38</div>
+        <button class="shop-btn">Add to cart</button>
+      </div>
+    </div>
+    <div class="shop-card">
+      <div class="shop-swatch" style="background:#7c3fe8"></div>
+      <div class="shop-body">
+        <div class="shop-name">Royal Purple</div>
+        <div class="shop-desc">Lavender to deep violet — luxurious and dramatic palettes.</div>
+        <div class="shop-price">From $42</div>
+        <button class="shop-btn">Add to cart</button>
+      </div>
+    </div>
+    <div class="shop-card">
+      <div class="shop-swatch" style="background:#f47c20"></div>
+      <div class="shop-body">
+        <div class="shop-name">Ember &amp; Spice</div>
+        <div class="shop-desc">Warm oranges and terracottas for inviting, earthy atmospheres.</div>
+        <div class="shop-price">From $38</div>
+        <button class="shop-btn">Add to cart</button>
+      </div>
+    </div>
+  </div>
+</div>
 
+<!-- ── ABOUT ── -->
+<div id="about" class="section">
+  <p class="section-title">About</p>
+  <div class="about-grid">
+    <div class="about-text">
+      <h2 class="section-heading">Colour is our craft.</h2>
+      <p>Your Dream Shade was founded on a simple belief: that the right colour transforms a space. We spent years perfecting our six primary palettes, each spanning seven hand-crafted shades — from the palest tints to the deepest tones.</p>
+      <p>Every shade is mixed with premium pigments, tested for durability, and designed to work beautifully on its own or blended with others. Our online mixer lets you experiment before you commit — so you can find exactly what you're looking for.</p>
+    </div>
+    <div class="about-stats">
+      <div class="stat-box">
+        <div class="stat-num">42<span>+</span></div>
+        <div class="stat-label">Unique shades</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-num">6<span>.</span></div>
+        <div class="stat-label">Primary palettes</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-num">12<span>k</span></div>
+        <div class="stat-label">Happy customers</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-num">100<span>%</span></div>
+        <div class="stat-label">Premium pigments</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── CONTACT ── -->
+<div id="contact" class="section">
+  <p class="section-title">Contact</p>
+  <div class="contact-grid">
+    <div>
+      <h2 class="section-heading">Let's talk colour.</h2>
+      <div class="contact-info">
+        <p>Have a question about a shade or want to order in bulk? We'd love to hear from you.</p>
+      </div>
+      <div class="contact-detail">
+        <div class="cd-item">
+          <span class="cd-label">Email</span>
+          <span class="cd-value">hello@yourdreamshade.com</span>
+        </div>
+        <div class="cd-item">
+          <span class="cd-label">Phone</span>
+          <span class="cd-value">+1 (800) 555-0199</span>
+        </div>
+        <div class="cd-item">
+          <span class="cd-label">Hours</span>
+          <span class="cd-value">Mon–Fri, 9am–6pm EST</span>
+        </div>
+      </div>
+    </div>
+    <div class="contact-form">
+      <div class="form-row">
+        <input class="form-input" type="text"  placeholder="Your name">
+        <input class="form-input" type="email" placeholder="Email address">
+      </div>
+      <input class="form-input" type="text" placeholder="Subject">
+      <textarea class="form-input" placeholder="Your message..."></textarea>
+      <button class="form-submit">Send message</button>
+    </div>
+  </div>
+</div>
+
+<!-- ── FOOTER ── -->
 <footer>
-    <p>&copy; 2026 THE DREAM SHADE | Built for Global Creators</p>
+  <div class="footer-logo">Your<span>Dream</span>Shade</div>
+  <div class="footer-copy">&copy; 2025 Your Dream Shade — All colours reserved</div>
 </footer>
 
 <script src="script.js"></script>
