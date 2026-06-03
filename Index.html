@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Dream Shade | Premium Color Studio</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,800;1,800&family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body class="dark-mode">
+
+<nav>
+    <a class="logo" href="#">THE<span>DREAM</span>SHADE</a>
+    <ul class="nav-links">
+        <li><a href="#palettes">Collections</a></li>
+        <li><a href="#mixer">Studio Lab</a></li>
+        <li><a href="#about">About</a></li>
+        <li><button id="theme-toggle" class="toggle-btn">🌓 Toggle Mode</button></li>
+        <li class="profile-nav">E</li>
+    </ul>
+</nav>
+
+<header class="hero">
+    <div class="hero-left">
+        <p class="hero-tag">Digital Prototyping for Paint & Textile</p>
+        <h1 class="hero-h1">Find your<br><em id="typing-text"></em></h1>
+        <p class="hero-sub">The 7-shade rule engine. Prototype your blends with vertical precision before you mix a single drop of paint.</p>
+        <div class="cta-row">
+            <a class="btn-primary" href="#palettes">Explore Palettes</a>
+            <a class="btn-ghost" href="#mixer">Open Mixer</a>
+        </div>
+    </div>
+    <div class="hero-right-vertical">
+        <div class="v-strip" style="background:#e63232;"><span>CRIMSON</span></div>
+        <div class="v-strip" style="background:#1a6fe6;"><span>AZURE</span></div>
+        <div class="v-strip" style="background:#7c3fe8;"><span>ROYAL</span></div>
+        <div class="v-strip" style="background:#2ea84a;"><span>FOREST</span></div>
+    </div>
+</header>
+
+<section id="palettes" class="section">
+    <p class="section-title">Primary Collections</p>
+    <h2 class="section-heading">Ten Master Palettes</h2>
+    <div class="grid-container" id="color-grid"></div>
+</section>
+
+<section id="shade-section" class="section shade-area" style="display:none;">
+    <div id="shade-output"></div>
+</section>
+
+<section id="mixer" class="section">
+    <p class="section-title">The Studio Lab</p>
+    <div class="mixer-layout">
+        <div class="mixer-left">
+            <div class="chips-area" id="chips-area">
+                <span class="empty-hint">Click '+' on any shade to begin the pour...</span>
+            </div>
+            <div class="mixer-history" id="mixer-history"></div>
+        </div>
+        
+        <div class="mixer-right">
+            <div class="preview-box" id="preview-box">
+                <div class="pour-stream" id="pour-stream"></div>
+                <div class="preview-hex" id="preview-hex">#0D0D0D</div>
+                <div class="preview-cname" id="preview-cname">STUDIO EMPTY</div>
+            </div>
+            <button class="btn-reset" onclick="resetMixer()">Reset Studio</button>
+        </div>
+    </div>
+</section>
+
+<section id="about" class="section">
+    <p class="section-title">Industrial Solutions</p>
+    <div class="solutions-grid">
+        <div class="sol-card">
+            <h3>Textiles & Fabric</h3>
+            <p>Calculate hex-to-dye ratios for sustainable production.</p>
+        </div>
+        <div class="sol-card">
+            <h3>Cosmetic Formulation</h3>
+            <p>Prototype inclusive palettes in a digital-first environment.</p>
+        </div>
+        <div class="sol-card">
+            <h3>Architectural Paint</h3>
+            <p>The 7-shade rule ensures consistency for luxury interiors.</p>
+        </div>
+    </div>
+</section>
+
+<section id="collab" class="section contact-section">
+    <div class="contact-card">
+        <h2>Open for Collaboration</h2>
+        <p>Connecting software with physical industries. Let's build something beautiful.</p>
+        <a href="mailto:hello@thedreamshade.com" class="email-link">hello@thedreamshade.com</a>
+    </div>
+</section>
+
+<footer>
+    <p>&copy; 2026 THE DREAM SHADE | Built for Global Creators</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
