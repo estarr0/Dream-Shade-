@@ -1,10 +1,12 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Your Dream Shade — Premium Paint Studio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -16,14 +18,12 @@
     <li><a href="#palettes">Palettes</a></li>
     <li><a href="#mixer">Mixer</a></li>
     <li><a href="#gallery-section">Gallery</a></li>
-    <li><a href="#shop">Shop</a></li>
-    <li><a href="#about">About</a></li>
-    <li><a href="#contact">Contact</a></li>
+    <li><a href="#feedback">Feedback</a></li>
   </ul>
 </nav>
 
 <!-- ── HERO ── -->
-<div class="hero">
+<section class="hero">
   <div class="hero-left">
     <p class="hero-tag">Premium paint studio</p>
     <h1 class="hero-h1">Find your<br><em>perfect</em><br>colour.</h1>
@@ -34,7 +34,7 @@
     </div>
   </div>
   <div class="hero-right">
-    <div style="display:flex;flex-direction:column;height:100%">
+    <div class="strip-wrap">
       <div class="strip-block" style="background:#e63232;color:#7d1010">Red</div>
       <div class="strip-block" style="background:#f5a623;color:#3a1f00">Yellow</div>
       <div class="strip-block" style="background:#1a6fe6;color:#042c53">Blue</div>
@@ -43,22 +43,22 @@
       <div class="strip-block" style="background:#f47c20;color:#4a2400">Orange</div>
     </div>
   </div>
-</div>
+</section>
 
 <!-- ── PALETTES ── -->
-<div id="palettes" class="section">
-  <p class="section-title">Primary palettes</p>
+<section id="palettes" class="section">
+  <p class="section-tag">Primary palettes</p>
   <h2 class="section-heading">Six colours. Seven shades each.</h2>
-  <p class="section-sub">Hover any shade to preview, click + to send it to the mixer.</p>
+  <p class="section-sub">Hover any shade to preview the drip. Click <strong>+</strong> to send it to the mixer.</p>
   <div class="palette-tabs" id="palette-tabs"></div>
   <div id="palette-views"></div>
-</div>
+</section>
 
 <!-- ── MIXER ── -->
-<div id="mixer" class="section">
-  <p class="section-title">Colour mixer</p>
+<section id="mixer" class="section section--dark">
+  <p class="section-tag">Colour mixer</p>
   <h2 class="section-heading">Blend your own shade.</h2>
-  <p class="section-sub">Add shades from any palette. Watch them pour and blend in real time.</p>
+  <p class="section-sub">Add shades from any palette and watch them pour and blend in real time.</p>
   <div class="mixer-layout">
     <div class="mixer-left">
       <div class="chips-area" id="chips-area">
@@ -76,145 +76,89 @@
       <div class="suggestions-row" id="suggestions-row"></div>
     </div>
   </div>
-</div>
+</section>
 
 <!-- ── GALLERY ── -->
-<div id="gallery-section" class="section">
-  <p class="section-title">Full gallery</p>
+<section id="gallery-section" class="section">
+  <p class="section-tag">Full gallery</p>
   <h2 class="section-heading">All shades, at a glance.</h2>
   <p class="section-sub">Click any swatch to add it straight to the mixer.</p>
   <div class="gallery-filter" id="gallery-filter"></div>
-  <div class="gallery-grid"  id="gallery-grid"></div>
-</div>
+  <div class="gallery-grid"   id="gallery-grid"></div>
+</section>
 
-<!-- ── SHOP ── -->
-<div id="shop" class="section">
-  <p class="section-title">Shop</p>
-  <h2 class="section-heading">Ready to paint.</h2>
-  <p class="section-sub">Premium interior and exterior paints in our signature shades.</p>
-  <div class="shop-grid">
-    <div class="shop-card">
-      <div class="shop-swatch" style="background:#e63232"></div>
-      <div class="shop-body">
-        <div class="shop-name">Crimson Collection</div>
-        <div class="shop-desc">Bold reds from blush to oxblood. Perfect for accent walls and feature spaces.</div>
-        <div class="shop-price">From $38</div>
-        <button class="shop-btn">Add to cart</button>
-      </div>
-    </div>
-    <div class="shop-card">
-      <div class="shop-swatch" style="background:#f5a623"></div>
-      <div class="shop-body">
-        <div class="shop-name">Golden Hour</div>
-        <div class="shop-desc">Warm yellows and ambers that bring sunlight into any room.</div>
-        <div class="shop-price">From $38</div>
-        <button class="shop-btn">Add to cart</button>
-      </div>
-    </div>
-    <div class="shop-card">
-      <div class="shop-swatch" style="background:#1a6fe6"></div>
-      <div class="shop-body">
-        <div class="shop-name">Deep Blue</div>
-        <div class="shop-desc">From arctic ice to midnight navy — calming blues for every space.</div>
-        <div class="shop-price">From $38</div>
-        <button class="shop-btn">Add to cart</button>
-      </div>
-    </div>
-    <div class="shop-card">
-      <div class="shop-swatch" style="background:#2ea84a"></div>
-      <div class="shop-body">
-        <div class="shop-name">Garden &amp; Grove</div>
-        <div class="shop-desc">Nature-inspired greens that bring life to interiors and exteriors.</div>
-        <div class="shop-price">From $38</div>
-        <button class="shop-btn">Add to cart</button>
-      </div>
-    </div>
-    <div class="shop-card">
-      <div class="shop-swatch" style="background:#7c3fe8"></div>
-      <div class="shop-body">
-        <div class="shop-name">Royal Purple</div>
-        <div class="shop-desc">Lavender to deep violet — luxurious and dramatic palettes.</div>
-        <div class="shop-price">From $42</div>
-        <button class="shop-btn">Add to cart</button>
-      </div>
-    </div>
-    <div class="shop-card">
-      <div class="shop-swatch" style="background:#f47c20"></div>
-      <div class="shop-body">
-        <div class="shop-name">Ember &amp; Spice</div>
-        <div class="shop-desc">Warm oranges and terracottas for inviting, earthy atmospheres.</div>
-        <div class="shop-price">From $38</div>
-        <button class="shop-btn">Add to cart</button>
-      </div>
-    </div>
-  </div>
-</div>
+<!-- ── FEEDBACK ── -->
+<section id="feedback" class="section section--dark">
+  <p class="section-tag">Feedback</p>
+  <h2 class="section-heading">Tell us what you think.</h2>
+  <p class="section-sub">We read every response — your thoughts help us craft better shades.</p>
 
-<!-- ── ABOUT ── -->
-<div id="about" class="section">
-  <p class="section-title">About</p>
-  <div class="about-grid">
-    <div class="about-text">
-      <h2 class="section-heading">Colour is our craft.</h2>
-      <p>Your Dream Shade was founded on a simple belief: that the right colour transforms a space. We spent years perfecting our six primary palettes, each spanning seven hand-crafted shades — from the palest tints to the deepest tones.</p>
-      <p>Every shade is mixed with premium pigments, tested for durability, and designed to work beautifully on its own or blended with others. Our online mixer lets you experiment before you commit — so you can find exactly what you're looking for.</p>
-    </div>
-    <div class="about-stats">
-      <div class="stat-box">
-        <div class="stat-num">42<span>+</span></div>
-        <div class="stat-label">Unique shades</div>
-      </div>
-      <div class="stat-box">
-        <div class="stat-num">6<span>.</span></div>
-        <div class="stat-label">Primary palettes</div>
-      </div>
-      <div class="stat-box">
-        <div class="stat-num">12<span>k</span></div>
-        <div class="stat-label">Happy customers</div>
-      </div>
-      <div class="stat-box">
-        <div class="stat-num">100<span>%</span></div>
-        <div class="stat-label">Premium pigments</div>
-      </div>
-    </div>
-  </div>
-</div>
+  <div class="feedback-layout">
 
-<!-- ── CONTACT ── -->
-<div id="contact" class="section">
-  <p class="section-title">Contact</p>
-  <div class="contact-grid">
-    <div>
-      <h2 class="section-heading">Let's talk colour.</h2>
-      <div class="contact-info">
-        <p>Have a question about a shade or want to order in bulk? We'd love to hear from you.</p>
+    <!-- Form -->
+    <div class="feedback-form-wrap">
+      <div id="feedback-success" class="feedback-success" style="display:none">
+        <div class="success-icon">✓</div>
+        <h3>Thank you!</h3>
+        <p>Your feedback has been saved and our team has been notified.</p>
+        <button class="btn-ghost" onclick="resetFeedback()">Submit another</button>
       </div>
-      <div class="contact-detail">
-        <div class="cd-item">
-          <span class="cd-label">Email</span>
-          <span class="cd-value">hello@yourdreamshade.com</span>
+
+      <div id="feedback-form">
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">Your name <span class="req">*</span></label>
+            <input class="form-input" id="fb-name" type="text" placeholder="e.g. Alex Johnson">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Email address <span class="req">*</span></label>
+            <input class="form-input" id="fb-email" type="email" placeholder="you@example.com">
+          </div>
         </div>
-        <div class="cd-item">
-          <span class="cd-label">Phone</span>
-          <span class="cd-value">+1 (800) 555-0199</span>
+
+        <div class="form-group">
+          <label class="form-label">Overall rating <span class="req">*</span></label>
+          <div class="star-picker" id="star-picker">
+            <button class="star-btn" data-v="1">★</button>
+            <button class="star-btn" data-v="2">★</button>
+            <button class="star-btn" data-v="3">★</button>
+            <button class="star-btn" data-v="4">★</button>
+            <button class="star-btn" data-v="5">★</button>
+          </div>
+          <input type="hidden" id="fb-rating" value="0">
         </div>
-        <div class="cd-item">
-          <span class="cd-label">Hours</span>
-          <span class="cd-value">Mon–Fri, 9am–6pm EST</span>
+
+        <div class="form-group">
+          <label class="form-label">Favourite shade <span class="form-optional">(optional)</span></label>
+          <select class="form-input" id="fb-shade">
+            <option value="">— Select a shade —</option>
+          </select>
         </div>
+
+        <div class="form-group">
+          <label class="form-label">Your message <span class="req">*</span></label>
+          <textarea class="form-input form-textarea" id="fb-message" placeholder="What did you love? What could we improve?"></textarea>
+        </div>
+
+        <div class="form-error" id="form-error" style="display:none"></div>
+
+        <button class="btn-primary form-submit" id="submit-btn" onclick="submitFeedback()">
+          <span id="submit-label">Send feedback</span>
+        </button>
       </div>
     </div>
-    <div class="contact-form">
-      <div class="form-row">
-        <input class="form-input" type="text"  placeholder="Your name">
-        <input class="form-input" type="email" placeholder="Email address">
+
+    <!-- Recent feedback preview -->
+    <div class="feedback-preview-wrap">
+      <p class="fp-title">Recent feedback</p>
+      <div id="recent-feedback">
+        <div class="fp-loading">Loading reviews...</div>
       </div>
-      <input class="form-input" type="text" placeholder="Subject">
-      <textarea class="form-input" placeholder="Your message..."></textarea>
-      <button class="form-submit">Send message</button>
+      <a href="/dashboard" target="_blank" class="dashboard-link">View full dashboard →</a>
     </div>
+
   </div>
-</div>
+</section>
 
 <!-- ── FOOTER ── -->
 <footer>
